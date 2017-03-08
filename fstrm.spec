@@ -6,15 +6,19 @@
 Summary:	C implementation of the Frame Streams transport protocol
 Summary(pl.UTF-8):	Implementacja protokołu transportowego Frame Streams w języku C
 Name:		fstrm
-Version:	0.2.0
+Version:	0.3.1
 Release:	1
-License:	Apache 2.0
+License:	Apache v2.0
 Group:		Libraries
-Source0:	https://github.com/farsightsec/fstrm/releases/download/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	63520f76b982e2fcf0084b39fa673525
+#Source0Download: https://github.com/farsightsec/fstrm/releases
+Source0:	https://github.com/farsightsec/fstrm/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	8159053635f307b38cdc21ea34a8fca3
 URL:		https://github.com/farsightsec/fstrm
+BuildRequires:	autoconf >= 2.64
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	doxygen
 BuildRequires:	libevent-devel >= 2
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -78,6 +82,11 @@ Statyczna biblioteka fstrm.
 %setup -q
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-silent-rules \
 	%{!?with_static_libs:--disable-static}
