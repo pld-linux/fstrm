@@ -7,7 +7,7 @@ Summary:	C implementation of the Frame Streams transport protocol
 Summary(pl.UTF-8):	Implementacja protokołu transportowego Frame Streams w języku C
 Name:		fstrm
 Version:	0.5.0
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/farsightsec/fstrm/releases
