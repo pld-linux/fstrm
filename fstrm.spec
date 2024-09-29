@@ -1,18 +1,17 @@
 #
 # Conditional build:
-%bcond_without	apidocs		# do not build and package API docs
-%bcond_without	static_libs	# don't build static libraries
+%bcond_without	static_libs	# static library
 #
 Summary:	C implementation of the Frame Streams transport protocol
 Summary(pl.UTF-8):	Implementacja protokołu transportowego Frame Streams w języku C
 Name:		fstrm
-Version:	0.6.0
+Version:	0.6.1
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/farsightsec/fstrm/releases
 Source0:	https://dl.farsightsecurity.com/dist/fstrm/%{name}-%{version}.tar.gz
-# Source0-md5:	e14684243e89d54e311ab228b4c9a309
+# Source0-md5:	cb386a901efdb423ce3df5fe1ee442be
 URL:		https://github.com/farsightsec/fstrm
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
